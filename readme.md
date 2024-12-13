@@ -1,77 +1,66 @@
-# Employee Management System: Full-Stack Web Application with React, Tailwind CSS, and Spring Boot
+# Employee Management System: Backend mit Spring Boot
 
-This repository contains a full-stack web application that implements an employee management system. The project leverages modern technologies to demonstrate how a reactive frontend integrates seamlessly with a powerful backend.
+Dieses Repository enthält das Backend einer Employee Management System-Anwendung, entwickelt mit Spring Boot. Es bietet eine robuste REST-API für die Verwaltung von Mitarbeiterdaten und ist darauf ausgelegt, nahtlos mit einem separaten Frontend zu interagieren.
 
-## Features
+## Funktionen des Backends
 
-### 1. **Complete Functionality:**
-- Create, edit, delete, and list employees.
-- User-friendly interface with smooth integration between frontend and backend.
+### 1. **Komplette Funktionalität:**
+- Bereitstellung von REST-APIs für CRUD-Operationen (Erstellen, Bearbeiten, Löschen und Anzeigen von Mitarbeitern).
+- Konfiguration für Cross-Origin-Anfragen (CORS) zur Unterstützung von Frontend-Integration.
 
-### 2. **Technologies:**
-- **Frontend:** React with Tailwind CSS for a responsive and modern design.
-- **Backend:** Spring Boot for providing REST APIs.
-- **Database:** MySQL as the relational database system.
+### 2. **Technologien:**
+- **Backend:** Spring Boot zur Entwicklung skalierbarer REST-APIs.
+- **Datenbank:** MySQL als relationale Datenbank.
 
-## Backend Development (Spring Boot)
+---
 
-### a. Project Setup
-- Creation of a Spring Boot application with the following dependencies:
-  - Lombok
-  - JPA
-  - MySQL Driver
-  - Spring Web
+## Backend-Entwicklung mit Spring Boot
 
-### b. Database Configuration
-- MySQL database setup with configurations:
+### a. **Projektsetup**
+- Erstellung einer Spring-Boot-Anwendung mit folgenden Abhängigkeiten:
+  - Lombok (Reduktion von Boilerplate-Code)
+  - JPA (Java Persistence API für Datenbankzugriffe)
+  - MySQL-Treiber
+  - Spring Web (Bereitstellung von REST-APIs)
+
+### b. **Datenbankkonfiguration**
+- Einrichtung einer MySQL-Datenbank mit folgenden Konfigurationen in `application.properties`:
   - URL
-  - Username
-  - Password
+  - Benutzername
+  - Passwort
 
-### c. REST APIs
-- Save, retrieve, update, and delete employees.
-- Advanced CORS configuration for cross-origin requests.
+### c. **REST-APIs**
+- Implementierung von Endpunkten für die Verwaltung von Mitarbeitern:
+  - **POST:** Erstellen eines neuen Mitarbeiters.
+  - **GET:** Abrufen eines Mitarbeiters oder einer Liste aller Mitarbeiter.
+  - **PUT:** Aktualisieren eines Mitarbeiters.
+  - **DELETE:** Löschen eines Mitarbeiters.
+- Erweiterte CORS-Konfiguration zur Unterstützung von Anfragen aus verschiedenen Ursprüngen.
 
-## Frontend Development (React)
+### d. **Architektur**
+- **Service-Schicht:** Business-Logik und Datenvalidierung.
+- **Repository-Schicht:** Datenbankinteraktion mit JPA.
+- **Controller-Schicht:** Verarbeitung von API-Anfragen und Antworten.
 
-### a. Project Setup
-- Creation of the React application using `npx create-react-app`.
-- Integration of Tailwind CSS via npm and configuration in `tailwind.config.js`.
+---
 
-### b. Component-Based Architecture
-- **Navbar Component:** Main navigation.
-- **Add Employee:** Form to add new employees styled with Tailwind CSS.
-- **Employee List:** Display all employees in a table.
+## Setup und Installation
 
-### c. State Management and API Calls
-- **State Management:** Using `useState` and `useEffect` hooks.
-- **API Calls:** Axios for communication with the backend.
-- Centralized service class to manage API interactions.
+### Voraussetzungen:
+- Java 21 oder höher
+- MySQL-Datenbank
+- Maven (zur Verwaltung von Abhängigkeiten)
 
-### d. Routing and Navigation
-- Implementation of React Router to manage multiple pages:
-  - Employee list
-  - Add and edit employees
-
-### e. Optimizations
-- Reusable components for individual employees.
-- Parent-child component communication for dynamic updates.
-
-## Setup and Installation
-
-### Prerequisites:
-- Node.js and npm
-- MySQL database
-- Java 17 or higher
-
-### Steps:
-1. **Backend:**
-   - Clone the repository and import it into IntelliJ IDEA or a similar IDE.
-   - Configure database details in `application.properties`.
-   - Run the application using `mvn spring-boot:run`.
-
-2. **Frontend:**
-   - Navigate to the `frontend` directory.
-   - Install dependencies with `npm install`.
-   - Start the React application with `npm start`.
-
+### Schritte:
+1. **Repository klonen:**
+   ```bash
+   git clone <repository-url>
+   ```
+2. **Projekt importieren:**
+   - Öffnen Sie das Projekt in IntelliJ IDEA oder einer ähnlichen IDE.
+3. **Datenbank konfigurieren:**
+   - Passen Sie die Datenbankdetails in der Datei `application.properties` an.
+4. **Anwendung starten:**
+   ```bash
+   mvn spring-boot:run
+   ```
